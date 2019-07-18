@@ -186,6 +186,16 @@ The same can be written using the [ES2017](/es2017/) [async functions](/javascri
 })()
 ```
 
+In a more generic way:
+
+```js
+;(async () => {
+  const response = await fetch('./file.json')
+  const data = await response.arrayBuffer()
+  console.log(String.fromCharCode.apply(null, new Uint8Array(data)))
+})()
+```
+
 ## Request Object
 
 The Request object represents a resource request, and it's usually created using the `new Request()` API.
